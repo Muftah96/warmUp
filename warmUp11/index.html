@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<meta charset="utf-8">
+	<title>WarmUp 11</title>
+</head>
+<body>
+	<button id="Right">Right</button>
+	<button id="Lift">Lift</button>
+	<button id="creat">Creat</button>
+	<div id="RightDV">
+	<ul id="RightUN"></ul>
+	</div>
+	<div id="LiftDV">
+	<ul id="LiftUN"></ul>
+	</div>
+	<script type="text/javascript" src="js.js"></script>
+	<script type="text/javascript">
+		$('#Right').on('click',function () {
+			var $RightUN = $('#RightUN');
+			var $RightLI = $('<li></li>');
+			$RightLI.text('DommyDaty')
+			$RightLI.appendTo($RightUN);
+		})
+		$('#Lift').on('click',function () {
+			var $LiftUN = $('#LiftUN');
+			var $LiftLI = $('<li></li>');
+			$LiftLI.text('DommyDaty')
+			$LiftLI.appendTo($LiftUN);
+		})
+	</script>
+</body>
+</html>
+
+ 
