@@ -20,54 +20,39 @@ Output
 Technical Details
 
     -The maximum size of a range will be 100 integers
-    -The starting number of a range will be: 0 < n < 100
+    -The starting number of a range will be: 0 < n < 100\
+-----------------------------------
+
+1 split 
+
+2 join the minimumm array 
+3 find the max and the min 
+
  */
 
- function mysteryRange (inputString, range) {
+function mysteryRange (inputString, range) {
     var arr = inputString.split('');
-    var resulte = [];
-    
-    for (var i = 0; i < arr.length - 1; i++) {
-        
-        var maximum = arr[i];
-        var minimum = arr[i];
-        var  array =[]
-        array.push(arr[i])
-        array.push(arr[++i])
-        var Darray = array;
-        console.log(Darray)
-        var x = array.join('');
-        if (x <= range) {
-
-            for (var j = 0; j < array.length - 1; j++) {
-
-                console.log(maximum, minimum)
-                if (maximum < array[j]) {
-
-                    maximum = array[j];
-
-                }else if (minimum > array[j]) {
-
-                    minimum = array[j];
-                }
-                console.log(maximum, minimum)
-                resulte.push(maximum);
-                resulte.push(minimum);
-            } 
-        }else {
-            console.log(arr[i])
-              if (maximum < arr[i]) {
-
-                    maximum = arr[i];
-
-                }else if (minimum > arr[i]) {
-
-                    minimum = arr[i];
-                }
-            }
-            resulte.push(maximum);
-            resulte.push(minimum);
+    var i = 1;
+    var j = 0;
+    while (arr.length !== range) {
+       
+        if (i == arr[j]) {
+            arr.splice(j, 2, i+arr[j+1])
+        }
+        if (j === arr.length-1) {
+            j = 0
+            i++
+        } 
+        j++
     }
-     return resulte;
+
+         arr = arr.map(function (element) {
+            
+       return Number(element)
+
+   })
+         
+    arr.sort(function (a,b){return a-b}).splice(1, arr.length-2)
+    return arr
 
  }
