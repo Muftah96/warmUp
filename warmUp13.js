@@ -16,7 +16,11 @@
             C          100
             D          500
             M          1,000 
-    
+
+            first brake the string to array 
+            loop over it 
+            change every value of it to its decimal number 
+
     2. Complete the method/function so that it converts dash/underscore delimited words into camel casing. The first word within the output should be capitalized only if the original word was capitalized (known as Upper Camel Case, also often referred to as Pascal case).
         Examples:
 
@@ -31,3 +35,33 @@
             filter_list([1,'a','b',0,15]) == [1,0,15]
             filter_list([1,2,'aasf','1','123',123]) == [1,2,123]
 */
+
+function romanNumeral (roma){
+    var arr = roma.split('');
+
+    for (var i = 0; i < arr.length -1; i++) {
+       if ( arr[i] === 'M' ){
+            arr.splice(i, 1, 1000);
+       }
+       if ( arr[i] === 'D' ){
+            arr.splice(i, 1, 500);
+       }
+       if ( arr[i] === 'C' ){
+            arr.splice(i, 1, 100);
+       }
+        if ( arr[i] === 'L' ){
+            arr.splice(i, 1, 50);
+       }
+       if ( arr[i] === 'X' ){
+            arr.splice(i, 1, 10);
+       }
+       if ( arr[i] === 'v' ){
+            arr.splice(i, 1, 5);
+       }
+       if ( arr[i] === 'I' ){
+            arr.splice(i, 1, 1);
+       }
+
+    }
+    return arr
+}
