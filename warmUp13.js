@@ -39,7 +39,7 @@
 function romanNumeral (roma){
     var arr = roma.split('');
 
-    for (var i = 0; i < arr.length -1; i++) {
+    for (var i = 0; i < arr.length; i++) {
        if ( arr[i] === 'M' ){
             arr.splice(i, 1, 1000);
        }
@@ -55,13 +55,41 @@ function romanNumeral (roma){
        if ( arr[i] === 'X' ){
             arr.splice(i, 1, 10);
        }
-       if ( arr[i] === 'v' ){
+       if ( arr[i] === 'V' ){
             arr.splice(i, 1, 5);
        }
        if ( arr[i] === 'I' ){
             arr.splice(i, 1, 1);
        }
-
     }
-    return arr
+
+     for (var i = 0; i < arr.length; i++) {
+        if (arr[i] < arr[i + 1]) {
+            arr.splice(i, 1, -1 * arr[i]);
+        }
+     }
+
+      return arr.reduce(function(acc , elem){
+        return acc += elem;
+      },0);
+
+}
+
+function toCamelCase (sentence) {
+   var arr = sentence.split('')
+
+    for (var i = 0; i < arr.length; i++) {
+
+       if ( arr[i] === '_' || arr[i] === '-' ) {
+            arr.splice(i,2,arr[i+1].toUpperCase())
+       }
+    }
+        return arr.join('');
+}
+
+function filter_list(argument) {
+    // body...
+   return argument.filter(function (elem) {
+        return typeof elem  === "number"
+    })
 }
