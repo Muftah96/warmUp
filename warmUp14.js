@@ -20,22 +20,31 @@ Explanation: In this case, no transaction is done, i.e. max profit = 0.
 
 var maxProfit = function(prices) {
   // YOUR CODE HERE
+ var prices = prices
 var  min =prices[0];
-var max = prices[0];
-var resulte = 0
-for (var i = 0; i < prices.length; i++) {
+var max = 0;
+var arr = [];
+
+for (var i = 0; i < prices.length-1; i++) {
 	
 	if ( min > prices[i] ){
 		min = prices[i]
 		console.log(min,i)
-	var	x = prices.length - i
-	}
-	for (var j = x; j < prices.length; j++) {
-		if (max < prices[j]){
-			max = prices[j]
-		}
+		arr = prices.splice(0,i)
+		console.log(arr)
+		max = prices[i]
 	}
 }
-resulte = max-min
-return resulte;
+console.log(prices)
+
+	for (var j = 0; j < prices.length -1; j++) {
+		if (max < prices[j]){
+			max = prices[j]
+			console.log(prices,j)
+			console.log(max,j)
+		}
+	}
+
+
+console.log(max - min);
 };
