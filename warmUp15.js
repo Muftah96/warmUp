@@ -4,3 +4,14 @@
 //
 //
 // Note : you can`t use any built-in functions .
+
+function reverseStr(argument) {
+	// body...
+	var arr = argument.split(' ');
+	var array = [];
+
+	for (var i = arr.length - 1; i >= 0; i--) {
+		array.push(arr[i]);
+	}
+	return array.join(' ');
+}
