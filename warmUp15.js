@@ -15,3 +15,12 @@ function reverseStr(argument) {
 	}
 	return array.join(' ');
 }
+
+function reverseStr2(argument) {
+	// body...
+	var arr = [];
+	for (var i = argument.length - 1; i >= 0; i--) {
+		arr.push(argument[i]);
+	}
+	return arr.join('');
+}

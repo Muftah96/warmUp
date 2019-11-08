@@ -30,3 +30,4 @@
 // var calculateTime = function(keyboard, word) {
     
 // };
+// i will solve it later
