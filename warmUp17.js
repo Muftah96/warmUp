@@ -31,3 +31,27 @@
     
 // };
 // i will solve it later
+
+function calculateTime (keyboard, word) {
+
+ var array = keyboard.split('');
+ var arr = word.split('');
+ var diff = []
+ 
+var index = arr.map(function(elem,i){
+	return array.indexOf(elem);
+})
+index.shift(0)
+console.log(index)
+var i = 0;
+while (i + 1 <= index.length - 1) {
+diff.push(index[i] - index[i + 1])
+i ++;
+} 
+console.log(diff)
+var calc = diff.reduce(function(acc,elem){
+	return acc += elem
+})
+return calc
+
+}
